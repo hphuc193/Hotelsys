@@ -23,11 +23,15 @@ const root = require('./routes/root');
 const login = require('./routes/login');
 const room = require('./routes/room');
 const manager = require('./routes/manager');
+const booking = require('./routes/booking');
+const customer = require('./routes/customer');
 
 root.applyRoutes(server);
 login.applyRoutes(server);
 room.applyRoutes(server);
 manager.applyRoutes(server);
+booking.applyRoutes(server);
+customer.applyRoutes(server)
 
 const PORT = 8080;
 server.listen(PORT, function() {
