@@ -48,6 +48,28 @@ let rules = {
             phone: "string|min:10",          // Kiểm tra số điện thoại là chuỗi và có độ dài tối thiểu là 10 ký tự
             address: "string"                // Kiểm tra địa chỉ là chuỗi
         }
+    },
+    // Phần mới cho service (tương tự như room)
+    "/service": {
+        "POST": {
+            name: "required|string",        // Kiểm tra tên dịch vụ là chuỗi và bắt buộc
+            price: "required|integer|min:0", // Kiểm tra giá dịch vụ là số nguyên và lớn hơn hoặc bằng 0
+            description: "string"            // Kiểm tra mô tả dịch vụ là chuỗi
+        }
+    },
+    "/service/:id": {
+        "GET": {
+            id: "required|integer|min:1"    // Kiểm tra id là số nguyên và lớn hơn hoặc bằng 1
+        },
+        "PATCH": {
+            id: "required|integer|min:1",   // Kiểm tra id là số nguyên và lớn hơn hoặc bằng 1
+            name: "string",                  // Kiểm tra tên dịch vụ là chuỗi
+            price: "integer|min:0",          // Kiểm tra giá dịch vụ là số nguyên và lớn hơn hoặc bằng 0
+            description: "string"            // Kiểm tra mô tả dịch vụ là chuỗi
+        },
+        "DELETE": {
+            id: "required|integer|min:1"    // Kiểm tra id là số nguyên và lớn hơn hoặc bằng 1
+        }
     }
 };
 

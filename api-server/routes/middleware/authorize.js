@@ -27,6 +27,34 @@ let table_policies = {
             "GET": true,  // Customer có thể xem thông tin chi tiết phòng
         },
     },
+    "/service": {
+        "admin": {
+            "GET": true,
+            "POST": true,
+        },
+        "manager": {
+            "GET": true,
+            "POST": false,
+        },
+        "customer": {
+            "GET": true,  // Customer có thể xem danh sách dịch vụ
+        },
+    },
+    "/service/:id": {
+        "admin": {
+            "GET": true,
+            "DELETE": true,
+            "PATCH": true,
+        },
+        "manager": {
+            "GET": true,
+            "DELETE": false,
+            "PATCH": false,
+        },
+        "customer": {
+            "GET": true,  // Customer có thể xem thông tin chi tiết dịch vụ
+        },
+    },
     "/manager": {
         "admin": {
             "GET": true,
